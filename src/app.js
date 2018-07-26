@@ -8,20 +8,13 @@ import {startSetTreeList} from './actions/trees'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { setTimeout } from 'timers';
-import moment from 'moment';
 import 'react-dates/lib/css/_datepicker.css';
-import {firebase, storage} from './firebase/firebase';
-import {setCommonFilter} from './actions/filters';
+
 
 //Force Webpage to top on refresh
 window.onbeforeunload = () => {
     window.scrollTo(0,0);
 };
-
-
-
-
-
 
 //Build Store
 const store = configureStore();
