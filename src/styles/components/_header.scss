@@ -1,0 +1,111 @@
+body {
+    overflow: hidden;
+}
+
+body.unlock {
+    overflow: visible;
+}
+
+header {
+    background: $primary;
+    color: $white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    min-height: 350px;
+    max-height: 100vh;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: center;
+    transition: max-height 1s ease-out, color 1s ease-out;
+    -webkit-box-shadow: 0px 3px 4px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 3px 4px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 4px -1px rgba(0,0,0,0.75);
+}
+
+.header.shrink {
+    max-height: 30vh;
+    color: $secondary;
+}
+
+.header__content {
+    padding: 3rem 1rem;
+}
+
+.header__title {
+    margin: 0 auto 10px;
+}
+
+.header__subtitle {
+    margin: auto;
+}
+
+.header__leaf-container {
+    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+.header__leaf {
+    cursor: pointer;
+    font-size: 8rem;
+    transform: rotate(125deg);
+    position: relative;
+    bottom: 3rem;
+    transition: transform 1s ease-out, color 1s ease-out, bottom 1s ease-out;
+}
+
+.header__leaf.rotated {
+    bottom: -3.5rem;
+    color: $secondary;
+    transform: rotate(315deg);
+}
+
+.header__leaf-text {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.header__leaf-text.fadeOut {
+    opacity: 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .body {
+        overflow: visible;
+    }
+    header {
+        flex-direction: row-reverse;
+        min-height: 0;
+        max-height: 10rem;
+    }
+    .header.shrink {
+        max-height: 10rem;
+    }
+    .header__content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+    .header__subtitle {
+        margin: 0;
+    }
+    .header__leaf-text {
+        display: none;
+    }
+    .header__leaf-container {
+        max-width: 400px;
+        align-items: center;
+        width: 40%;
+    }
+    .header__leaf {
+        font-size: 4rem;
+        position: static;
+    }
+}

@@ -1,0 +1,15 @@
+
+//Responsive Dashboard
+@media (min-width: $tablet-breakpoint) {
+    .dashboard {
+        display: flex;
+    }
+    .filters {
+        border-right: 1px solid black;
+        max-width: 400px;
+        width: 40%;
+    }
+    .dashboard__tree-list {
+        width: 100%;
+    }
+}

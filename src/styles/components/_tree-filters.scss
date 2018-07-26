@@ -1,0 +1,117 @@
+.filters__description {
+    text-align: center;
+    margin: 0 auto 2rem;
+    padding: 0 .4rem;
+}
+
+.filters__title {
+    color: $red;
+    margin: 10px 0 10px 1rem;
+}
+
+.filters__input__container {
+    display:flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+.filters__form {
+    width: 100%;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.filters__input {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    & > * {
+        text-align: center;
+        width: 50%;
+        padding: 1rem;
+    }
+}
+
+.is-names__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 0 2rem;
+    width: 100%;
+}
+
+.filters__names-input {
+    background: $background;
+    border: none;
+    border-bottom: 2px solid $primary;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    width: 90%;
+    padding: 1rem .5rem;
+    &::placeholder {
+        font-size: 1.5rem;
+        color: black;
+    }
+}
+
+.filter {
+    padding: 0;
+}
+
+label  {
+    display: block;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.filters__input input[type="radio"]:checked + label {
+    color: white;
+    background: $secondary !important;
+}
+
+.filters__input.active {
+    max-height: 300px;
+}
+
+.styled-select {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    margin: .3rem 0;
+    padding: 1rem 0 0;
+    cursor: pointer;
+    transition: background-color .5s ease-out, color .5s ease-out;
+    h2 {
+        margin: 0;
+    }
+}
+
+.reset__button {
+    border: none;
+    background: transparent;
+    padding: 1rem;
+    margin: auto;
+}
+
+.chevron {
+    margin-top: .4rem;
+    transition: transform .32s linear;
+}
+
+.chevron.active {
+    transform: rotate(180deg);
+}
+
+
+
+
+

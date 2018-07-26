@@ -1,0 +1,19 @@
+.tree__list {
+    background-color: #FFFFFF;  
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 20px auto 0px;
+    min-height: 400px;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+@media (min-width: $tablet-breakpoint) {
+    .tree__list {
+        margin: 0px auto 0px;
+        padding: 0;
+    }
+}
+
