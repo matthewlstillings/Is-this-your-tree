@@ -36,7 +36,7 @@ const jsx = (
 
 //Shrink Header if on mobile view
 const unlockBody = () => {
-    if (document.URL === 'http://localhost:8080/add-tree') {
+    if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree') {
         //Unlock the body
         const body = document.getElementsByClassName('body')[0];
         body.classList.add('unlock');

@@ -15,7 +15,7 @@ export class Header extends React.Component {
         unlocked: false
     }
     renderHeader = () => {
-        if (document.URL === 'http://localhost:8080/add-tree') {
+        if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree') {
             this.setState(()=>({header: 'add-tree'}));
         } else if (window.innerWidth >= 1040) {
             this.setState(()=>({header: 'desktop'}));
