@@ -32,15 +32,17 @@ const jsx = (
     </Provider>
 ); 
 
-//Add Active Header class if window larger than 1040px
-const addHeaderActiveClass = () => {
-    if (window.innerWidth >= 1040) {
-        const header = document.getElementsByClassName('header')[0];
-        header.classList.add('shrink');
-        const leaf = document.getElementsByClassName('header__leaf')[0];
-        leaf.classList.add('rotated');
+
+
+//Shrink Header if on mobile view
+const unlockBody = () => {
+    if (document.URL === 'http://localhost:8080/add-tree') {
+        //Unlock the body
+        const body = document.getElementsByClassName('body')[0];
+        body.classList.add('unlock');
     }
-};
+}
+
 
 //Renders application
 let hasRendered = false;
@@ -48,7 +50,8 @@ const renderApp = () => {
     if (!hasRendered) {
          ReactDOM.render(jsx, document.getElementById('root'));
          hasRendered = true;
-         setTimeout(() => {addHeaderActiveClass()}, 200);
+         unlockBody();
+         //setTimeout(() => {addHeaderActiveClass()}, 200);
     }
 };
 renderApp();

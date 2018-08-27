@@ -1,3 +1,8 @@
+.filters {
+    margin-top: 3rem;
+    min-height: 100vh;
+}
+
 .filters__description {
     text-align: center;
     margin: 0 auto 2rem;
@@ -9,10 +14,15 @@
     margin: 10px 0 10px 1rem;
 }
 
+.filters__form-titles {
+    margin: 1rem auto 3rem;
+}
+
 .filters__input__container {
     display:flex;
     justify-content: space-between;
     flex-flow: wrap;
+    text-align: center;
     width: 100%;
 }
 
@@ -68,6 +78,7 @@ input[type="radio"] {
 }
 
 label  {
+    background: #dddddd;
     display: block;
     cursor: pointer;
     padding: 1rem;
@@ -96,10 +107,10 @@ label  {
 }
 
 .reset__button {
-    border: none;
-    background: transparent;
+    @include buttons;
     padding: 1rem;
-    margin: auto;
+    margin:auto;
+    width: 100%;
 }
 
 .chevron {

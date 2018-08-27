@@ -1,0 +1,37 @@
+
+//////////Transitions
+
+//Unlocks body in all header variations
+
+body.unlocked {
+    overflow: visible;
+    margin: 0;
+}
+
+//Animation on mobile click and desktop load
+
+.header__leaf-text.unlocked {
+    opacity: 0;
+}
+
+.header__content.unlocked{
+    opacity: 0;
+}
+
+.header.unlocked {
+    color: $secondary;
+}
+
+.header__container.unlocked {
+    color: $secondary;
+    height: 0rem;
+    min-height: 50px;
+}
+
+
+.header__leaf.unlocked {
+    font-size: 2em;
+    bottom: 2.5rem;
+    color: $secondary;
+    transform: rotate(315deg);
+}

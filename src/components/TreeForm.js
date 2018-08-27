@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {storage} from '../firebase/firebase'
+import {storage} from '../firebase/firebase';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {startAddNewTree} from '../actions/trees';
 
 
@@ -11,9 +13,9 @@ export class TreeForm extends React.Component {
         super(props); 
         this.state = {
             image: props.tree ? props.tree.image : "",
-            commonName: props.tree ? props.tree.commonName : "",
-            latinName: props.tree ? props.tree.latinName : "",
-            family: props.tree ? props.tree.family : "",
+            commonName: props.tree ? props.tree.commonName : "none",
+            latinName: props.tree ? props.tree.latinName : "none",
+            family: props.tree ? props.tree.family : "none",
             type: props.tree ? props.tree.type : "",
             venation: props.tree ? props.tree.venation : "",
             arrangement: props.tree ? props.tree.arrangement : "",
@@ -24,9 +26,11 @@ export class TreeForm extends React.Component {
             fleshyFruits: props.tree ? props.tree.fleshyFruit : "",
             other: props.tree ? props.tree.other : "",
             margins: props.tree ? props.tree.margins : "",
-            info: props.tree ? props.tree.info : "",
-            flowers: props.tree ? props.tree.flowers : ""
-        }    
+            info: props.tree ? props.tree.info : "none",
+            flowers: props.tree ? props.tree.flowers : "none",
+            imagePreview: null
+        }  
+        this.fileChange = this.fileChange.bind(this);  
     }
 
     commonNameChange = (e) => {
@@ -89,6 +93,14 @@ export class TreeForm extends React.Component {
         const flowers = e.target.value;
         this.setState(()=>({flowers}))
     }
+    fileChange = (e) => {
+        const file = e.target.files[0];
+        const image = file.name;
+        this.setState(()=>({image}));
+        const storageRef = storage.ref('trees/' + file.name);
+        storageRef.put(file);
+        this.setState(()=>({imagePreview: URL.createObjectURL(file)}))
+    }
     onSubmit = (e) => {
         e.preventDefault();
         this.props.startAddNewTree({
@@ -115,159 +127,181 @@ export class TreeForm extends React.Component {
     render() {
         return (
             <div>
-            <input type="file" name="upload" onChange={(e) => {
-                    const file = e.target.files[0];
-                    const image = file.name;
-                    this.setState(()=>({image}));
-                    const storageRef = storage.ref('trees/' + file.name);
-                    storageRef.put(file);
-                }
-            }/>
-            <progress defaultValue="0" max="100"></progress>
-            <form onSubmit={this.onSubmit}>
-                <div>
-                    <input type="text" name="commonName" placeholder="Common Name" 
-                        onChange={this.commonNameChange}
-                    />
+                <h2 className="new-tree__image__title">Image:</h2>
+                <div className="new-tree__image__container">
+                    <label htmlFor="upload" className="new-tree__image-upload">
+                        Choose File</label>
+                        <input type="file" name="upload" onChange={this.fileChange}
+                            id="upload"
+                            className="new-tree__image-upload-button"
+                        />
+                    { !this.state.imagePreview ? (<p>No Image Uploaded</p>) : (<img src={this.state.imagePreview} className="new-tree__image-preview"/>)}
                 </div>
-                <div>
-                    <input type="text" name="latinName" placeholder="Latin Name" 
-                        onChange={this.latinNameChange}
-                    />
-                </div>
-                <div>
-                    <input type="text" name="family" placeholder="Family" 
-                        onChange={this.familyChange}
-                    />
-                </div>
-                <div className="leaves">
-                    <h2 className="leaves__title">Leaf Properties</h2>
+                
+                <form onSubmit={this.onSubmit} className="new-tree__properties__form">
+                    <h2 className="new-tree__image__title">Names:</h2>
+                    <div className="new-tree__properties__form-input__container">
+                        
+                        <input type="text" name="commonName" placeholder="Common Name" 
+                            onChange={this.commonNameChange}
+                            className="new-tree__properties__form-input is--common"
+                        />
+                    </div>
+                    <div className="new-tree__properties__form-input__container">
+                        <input type="text" name="latinName" placeholder="Latin Name" 
+                            onChange={this.latinNameChange}
+                            className="new-tree__properties__form-input is--latin"
+                        />
+                    </div>
+                    <div className="new-tree__properties__form-input__container">
+                        <input type="text" name="family" placeholder="Family Name" 
+                            onChange={this.familyChange}
+                            className="new-tree__properties__form-input is--family"
+                        />
+                    </div>
+                    <h2 className="leaves__title">Leaf Properties:</h2>
+                    <div className="new-tree__properties__field">
+                        
 
-                    <select component="select" name="type"
-                        onChange={this.typeChange}
-                    >
-                        <option value="">Type</option>
-                        <option value="simple">Simple</option>
-                        <option value="compound">Compound</option>
-                        <option value="bicompound">Bicompound</option>
-                        <option value="trifoliate">Trifoliate</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="type"
+                            onChange={this.typeChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Type</option>
+                            <option value="simple">Simple</option>
+                            <option value="compound">Compound</option>
+                            <option value="bicompound">Bicompound</option>
+                            <option value="trifoliate">Trifoliate</option>
+                        </select></div>
 
-                    <select component="select" name="venation"
-                        onChange={this.venationChange}
-                    >
-                        <option value="">Venation</option>
-                        <option value="arcuate">Arcuate</option>
-                        <option value="palmate">Palmate</option>
-                        <option value="parallel">Parallel</option>
-                        <option value="pinnate">Pinnate</option>
-                    </select>
-                    
-                    <select component="select" name="arrangement"
-                        onChange={this.arrangementChange}
-                    >
-                        <option value="">Arrangement</option>
-                        <option value="opposite">Opposite</option>
-                        <option value="subopposite">Sub-Opposite</option>
-                        <option value="alternate">Alternate</option>
-                        <option value="whorled">Whorled</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="venation"
+                            onChange={this.venationChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Venation</option>
+                            <option value="arcuate">Arcuate</option>
+                            <option value="palmate">Palmate</option>
+                            <option value="parallel">Parallel</option>
+                            <option value="pinnate">Pinnate</option>
+                        </select></div>
+                        
+                        <div className="properties__container"><select component="select" name="arrangement"
+                            onChange={this.arrangementChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Arrangement</option>
+                            <option value="opposite">Opposite</option>
+                            <option value="subopposite">Sub-Opposite</option>
+                            <option value="alternate">Alternate</option>
+                            <option value="whorled">Whorled</option>
+                        </select></div>
 
-                    <select component="select" name="margins"
-                        onChange={this.marginsChange}
-                    >
-                        <option value="">Margins</option>
-                        <option value="entire">Entire</option>
-                        <option value="serrate">Serrate</option>
-                        <option value="dentate">Dentate</option>
-                        <option value="toothed">Toothed</option>
-                        <option value="spiny">Spiny</option>
-                        <option value="doublySerrate">Doubly Serrate</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="margins"
+                            onChange={this.marginsChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Margins</option>
+                            <option value="entire">Entire</option>
+                            <option value="serrate">Serrate</option>
+                            <option value="dentate">Dentate</option>
+                            <option value="toothed">Toothed</option>
+                            <option value="spiny">Spiny</option>
+                            <option value="doublySerrate">Doubly Serrate</option>
+                        </select></div>
 
-                    <select component="select" name="shape"
-                        onChange={this.shapeChange}
-                    >
-                        <option value="">Shape</option>
-                        <option value="spoon">Spoon</option>
-                        <option value="lobed">Lobed</option>
-                        <option value="cordate">Cordate</option>
-                        <option value="linear">Linear</option>
-                        <option value="needle">Needle</option>
-                        <option value="elliptic">Elliptic</option>
-                        <option value="lanceolate">Lanceolate</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="shape"
+                            onChange={this.shapeChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Shape</option>
+                            <option value="spoon">Spoon</option>
+                            <option value="lobed">Lobed</option>
+                            <option value="cordate">Cordate</option>
+                            <option value="linear">Linear</option>
+                            <option value="needle">Needle</option>
+                            <option value="elliptic">Elliptic</option>
+                            <option value="lanceolate">Lanceolate</option>
+                        </select></div>
 
-                    <select component="select" name="lobing"
-                        onChange={this.lobingChange}
-                    >
-                        <option value="none">Lobing(if any)</option>
-                        <option value="pinnately">Pinnately</option>
-                        <option value="palmately">Palmately</option>
-                        <option value="irregular">Irregular</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="lobing"
+                            onChange={this.lobingChange}
+                            className="leaves__input"
+                        >
+                            <option value="none">Lobing(if any)</option>
+                            <option value="pinnately">Pinnately</option>
+                            <option value="palmately">Palmately</option>
+                            <option value="irregular">Irregular</option>
+                        </select></div>
 
-                    <select component="select" name="texture"
-                        onChange={this.textureChange}
-                    >
-                        <option value="">Texture</option>
-                        <option value="rough">Rough</option>
-                        <option value="smooth">Smooth</option>
-                        <option value="hairy">Hairy</option>
-                    </select>
-                </div>
-
-                <div className="fruit">
+                        <div className="properties__container"><select component="select" name="texture"
+                            onChange={this.textureChange}
+                            className="leaves__input"
+                        >
+                            <option value="">Texture</option>
+                            <option value="rough">Rough</option>
+                            <option value="smooth">Smooth</option>
+                            <option value="hairy">Hairy</option>
+                        </select></div>
+                    </div>
                     <h2 className="fruit__title">Fruit Properties:</h2>
+                    <div className="new-tree__properties__field">
+                        
 
-                    <select component="select" name="dryFruits"
-                        onChange={this.dryFruitsChange}
-                    >
-                        <option value="">Dry Fruits</option>
-                        <option value="achene">Achene</option>
-                        <option value="capsule">Capsule</option>
-                        <option value="caryopse">Caryopse</option>
-                        <option value="cone">Cone</option>
-                        <option value="follicle">Follicle</option>
-                        <option value="legume">Legume</option>
-                        <option value="nut">Nut</option>
-                        <option value="samara">Samara</option>
-                        <option value="schizocarp">Schizocarp</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="dryFruits"
+                            onChange={this.dryFruitsChange}
+                            className="fruit__input"
+                        >
+                            <option value="">Dry Fruits</option>
+                            <option value="achene">Achene</option>
+                            <option value="capsule">Capsule</option>
+                            <option value="caryopse">Caryopse</option>
+                            <option value="cone">Cone</option>
+                            <option value="follicle">Follicle</option>
+                            <option value="legume">Legume</option>
+                            <option value="nut">Nut</option>
+                            <option value="samara">Samara</option>
+                            <option value="schizocarp">Schizocarp</option>
+                        </select></div>
 
-                    <select component="select" name="fleshyFruits"
-                        onChange={this.fleshyFruitsChange}                     
-                    >
-                        <option value="">Fleshy Fruits</option>
-                        <option value="berry">Berry</option>
-                        <option value="drupe">Drupe</option>
-                        <option value="pepo">Pepo</option>
-                        <option value="pomes">Pome</option>
-                    </select>
+                        <div className="properties__container"><select component="select" name="fleshyFruits"
+                            onChange={this.fleshyFruitsChange}   
+                            className="fruit__input"                  
+                        >
+                            <option value="">Fleshy Fruits</option>
+                            <option value="berry">Berry</option>
+                            <option value="drupe">Drupe</option>
+                            <option value="pepo">Pepo</option>
+                            <option value="pomes">Pome</option>
+                        </select></div>
 
-                    <select component="select" name="other"
-                        onChange={this.otherChange}
-                    >
-                        <option value="">Other</option>
-                        <option value="aggregate">Aggregate</option>
-                        <option value="multiple">Multiple</option>
-                    </select>
-                </div>
-                <div>
-                    <h2>Flowers:</h2>
-                    <input type="text" name="flowers" placeholder="Flowers" 
-                        onChange={this.flowersChange}
-                    />
-                </div>
-                <div>
-                    <h2>Extra Info:</h2>
-                    <textarea type="text" name="info" placeholder="Info" 
-                        onChange={this.infoChange}
-                    />
-                </div>
-               
-                <button type="submit">Submit</button>
-            </form>
+                        <div className="properties__container"><select component="select" name="other"
+                            onChange={this.otherChange}
+                            className="fruit__input"
+                        >
+                            <option value="">Other</option>
+                            <option value="aggregate">Aggregate</option>
+                            <option value="multiple">Multiple</option>
+                        </select></div>
+                    </div>
+                    <h2 className="flowers__title">Flowers:</h2>
+                    <div className="new-tree__properties__form-input__container">
+                        
+                        <input type="text" name="flowers" placeholder="Flowers" 
+                            onChange={this.flowersChange}
+                            className="new-tree__properties__form-input"
+                        />
+                    </div>
+                    <h2 className="extra__title">Extra Info:</h2>
+                    <div className="new-tree__properties__form-input__container">
+                        
+                        <textarea type="text" name="info" placeholder="Info" 
+                            onChange={this.infoChange}
+                            className="new-tree__properties__form-input"
+                        />
+                    </div>
+                
+                    <button className="new-tree__submit-button" type="submit">Submit</button>
+                </form>
             
             </div>
         )

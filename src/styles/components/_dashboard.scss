@@ -3,6 +3,11 @@
 @media (min-width: $tablet-breakpoint) {
     .dashboard {
         display: flex;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        margin: auto;
+        max-width: 2000px;
+        padding-top: 3rem;
     }
     .filters {
         border-right: 1px solid black;

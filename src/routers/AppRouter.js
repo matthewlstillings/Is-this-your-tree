@@ -1,7 +1,7 @@
 import React from 'react';
-import {Router, Route, Switch, Link, NavLink} from 'react-router-dom';
+import {Router, Route, Switch, Link, NavLink} from 'react-router';
 import createHistory from 'history/createBrowserHistory'; 
-import Header from '../components/header';
+import HeaderContainer from '../components/HeaderContainer';
 import DashboardPage from '../components/Dashboard';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/404page';
@@ -16,7 +16,7 @@ export const history = createHistory();
 const AppRouter = () => (
     <Router history={history}>
         <div>
-            <Header />
+            <HeaderContainer />
             <Switch>
                 <Route 
                     path="/"

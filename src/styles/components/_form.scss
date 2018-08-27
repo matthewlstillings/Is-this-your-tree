@@ -1,0 +1,81 @@
+.new-tree {
+    max-width: 68.275rem; 
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+}
+
+.new-tree__image__container {
+    padding: 1rem;
+}
+
+.new-tree__image-upload {
+    @include buttons;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 30%;
+}
+
+.new-tree__image-upload-button {
+    display: none;
+}
+
+.new-tree__image-preview {
+    width: 85%;
+}
+
+.new-tree__properties__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-tree__title {
+    margin-top: 2rem;
+}
+
+.new-tree__properties__form-input__container {
+    padding: .5rem;
+}
+
+.new-tree__properties__form-input {
+    background: darken($white, 5%);
+    border: none;
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.2);
+    margin: auto;
+    outline-color: $primary;
+    padding: 1rem;
+    width: 100%   
+}
+
+.new-tree__properties__field {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    width: 100%;
+}
+
+.properties__container {
+    flex-direction: row;
+    display: flex;
+    width: 50%;
+}
+
+.leaves__input, .fruit__input {
+    outline-color: $primary;
+    -webkit-appearance: none;
+    background: darken($white, 5%);
+    border-radius: 0;
+    margin: .5rem;
+    padding: .5rem;
+    width: 100%;
+}
+
+.new-tree__submit-button {
+    @include buttons;
+    margin: 2rem 0 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+
+

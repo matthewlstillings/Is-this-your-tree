@@ -35,7 +35,7 @@ export class TreeFilters extends React.Component {
                     <div className="styled-select"
                                 onClick={this.expandForm}
                             >
-                                <h2>Names</h2>
+                                <h1 className="filters__form-titles">Names</h1>
                     </div> 
                     <div className="filters__input-container is-names__container">
                         <input type="text" name="commonName" placeholder="Common Name" 
@@ -57,6 +57,7 @@ export class TreeFilters extends React.Component {
                         {/* For Leaf and Fruit Filters */}
                 <div className="filters__leaves-container">
                     <div className="filters__input__container">
+                        <h1 className="filters__form-titles">Leaves</h1>
                         <div className="filters__form">
                             <div className="styled-select first-select"
                                 onClick={this.expandForm}
@@ -205,7 +206,7 @@ export class TreeFilters extends React.Component {
 
                     <div className="filters__fruits-container">
                         <div className="filters__input__container">
-
+                            <h1 className="filters__form-titles">Fruits</h1>
                             <div className="filters__form">
                                 <div className="styled-select"
                                     onClick={this.expandForm}

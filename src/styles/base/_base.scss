@@ -12,9 +12,10 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: $medium-size;
     margin: 0 auto;
-    max-width: 2500px;
     min-height: 100vh;
     min-width: 300px;
+    overflow: hidden;
+    width: 100%;
 }
 
 button {
