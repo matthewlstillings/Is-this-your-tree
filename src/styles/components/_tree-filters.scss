@@ -78,15 +78,19 @@ input[type="radio"] {
 }
 
 label  {
-    background: #dddddd;
     display: block;
     cursor: pointer;
     padding: 1rem;
+    transition: .4s all ease;
+    &:hover {
+        color: white;    
+        background: lighten($primary, 10%);
+    }
 }
 
 .filters__input input[type="radio"]:checked + label {
     color: white;
-    background: $secondary !important;
+    background: $primary !important;
 }
 
 .filters__input.active {

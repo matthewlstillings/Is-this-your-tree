@@ -17,7 +17,7 @@ export class Header extends React.Component {
     renderHeader = () => {
         if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree') {
             this.setState(()=>({header: 'add-tree'}));
-        } else if (window.innerWidth >= 1040) {
+        } else if (window.innerWidth >= 794.8) {
             this.setState(()=>({header: 'desktop'}));
         } else {
             this.setState(()=>({header: 'mobile'}));
@@ -25,6 +25,8 @@ export class Header extends React.Component {
     }
     unlockApp = () => {
         this.setState(()=>({unlocked: true}));
+        const body = document.getElementsByClassName('body')[0];
+        body.classList.add('unlock');
     }
     handleWidthChange = (windowWidth, event) => {
             this.setState({windowWidth: window.innerWidth})
@@ -33,7 +35,7 @@ export class Header extends React.Component {
     componentDidMount = () => {
         window.addEventListener("resize", this.handleWidthChange);
         this.renderHeader();
-        if (window.innerWidth >= 1040) {
+        if (window.innerWidth >= 794.8) {
             this.unlockApp();
         }
     }

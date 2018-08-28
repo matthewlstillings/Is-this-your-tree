@@ -10,12 +10,28 @@ import {setCommonFilter, setLatinFilter, setTypeFilter,
 
 
 export class TreeFilters extends React.Component {
+    state = {
+        type: '',
+        venation: '',
+        arrangement: '',
+        margins: '',
+        shape: '',
+        lobing: '',
+        texture: '',
+        dryFruits: '',
+        fleshyFruits: '',
+        other: ''
+    }
     expandForm = (e) => {
-        const arrow = e.target.parentNode.getElementsByClassName('chevron')[0];
-        arrow.classList.toggle('active');
-        //Collapsible
-        const collapsible = e.target.parentNode.parentNode.getElementsByClassName("filters__input")[0];
-        collapsible.classList.toggle("active");
+        if (e.target !== e.currentTarget) {
+            const arrow = e.target.parentNode.getElementsByClassName('chevron')[0];
+            arrow.classList.toggle('active');
+            //Collapsible
+            const collapsible = e.target.parentNode.parentNode.getElementsByClassName("filters__input")[0];
+            collapsible.classList.toggle("active");
+        }
+        e.stopPropagation();
+        
     }
     clearRadios = () => {
         let total = 0;
@@ -26,6 +42,18 @@ export class TreeFilters extends React.Component {
             }
             console.log('doop');
         }
+    }
+    componentDidUpdate = () => {
+        this.props.setTypeFilter(this.state.type);
+        this.props.setVenationFilter(this.state.venation);
+        this.props.setArrangementFilter(this.state.arrangement);
+        this.props.setMarginsFilter(this.state.margins);
+        this.props.setLobingFilter(this.state.lobing);
+        this.props.setTextureFilter(this.state.texture);
+        this.props.setDryFilter(this.state.dryFruits)
+        this.props.setFleshyFilter(this.state.fleshyFruits)
+        this.props.setOtherFilter(this.state.other)
+        this.props.setShapeFilter(this.state.shape)
     }
     render() {
         return (
@@ -67,15 +95,27 @@ export class TreeFilters extends React.Component {
                             </div>     
                             <div 
                                 name="type"
-                                onChange={(e)=>{
-                                    this.props.setTypeFilter(e.target.value)
-                                }}
+                                onChange={(e) => {
+                                        let type = e.target.value;
+                                        this.setState(()=>({type}));
+                                    }}
                                 className="filters__input"
-                            >
-                                <div className="filter"><input name="type" type="radio" value="simple" id="simple"/><label htmlFor="simple">Simple</label></div>
-                                <div className="filter"><input name="type" type="radio" value="compound" id="compound"/><label htmlFor="compound">Compound</label></div>
-                                <div className="filter"><input name="type" type="radio" value="bicompound" id="bicompound"/><label htmlFor="bicompound">Bicompound</label></div>
-                                <div className="filter"><input name="type" type="radio" value="trifoliate" id="trifoliate"/><label htmlFor="trifoliate">Trifoliate</label></div>
+                                >
+                                <div className="filter"><input name="type" type="radio" value="simple" id="simple" onClick={(e)=>{
+                                    
+                                }}/><label htmlFor="simple">Simple</label></div>
+                                <div className="filter"><input name="type" type="radio" value="compound" id="compound" onClick={(e)=>{
+                                    let type = e.target.value;
+                                    this.setState(()=>({type}));
+                                }}/><label htmlFor="compound">Compound</label></div>
+                                <div className="filter"><input name="type" type="radio" value="bicompound" id="bicompound" onClick={(e)=>{
+                                    let type = e.target.value;
+                                    this.setState(()=>({type}));
+                                }}/><label htmlFor="bicompound">Bicompound</label></div>
+                                <div className="filter"><input name="type" type="radio" value="trifoliate" id="trifoliate" onClick={(e)=>{
+                                    let type = e.target.value;
+                                    this.setState(()=>({type}));
+                                }}/><label htmlFor="trifoliate">Trifoliate</label></div>
                             </div>
                         </div>
                         <div className="filters__form">  
@@ -88,7 +128,9 @@ export class TreeFilters extends React.Component {
                             <div 
                                 name="venation"
                                 onChange={(e)=>{
-                                    this.props.setVenationFilter(e.target.value)
+                                    let venation = e.target.value;
+                                    this.setState(()=>({venation}));
+                                    
                                 }}
                                 className="filters__input"
                             >
@@ -108,7 +150,9 @@ export class TreeFilters extends React.Component {
                             <div
                                 name="arrangement"
                                 onChange={(e)=>{
-                                    this.props.setArrangementFilter(e.target.value)
+                                    let arrangement = e.target.value;
+                                    this.setState(()=>({arrangement}));
+                                    
                                 }}
                                 className="filters__input"
                             >
@@ -128,7 +172,9 @@ export class TreeFilters extends React.Component {
                             <div 
                                 name="margins"
                                 onChange={(e)=>{
-                                    this.props.setMarginsFilter(e.target.value)
+                                    let margins = e.target.value;
+                                    this.setState(()=>({margins}));
+                                   
                                 }}
                                 className="filters__input"
                             >
@@ -150,7 +196,9 @@ export class TreeFilters extends React.Component {
                             <div 
                                 name="shape"
                                 onChange={(e)=>{
-                                    this.props.setShapeFilter(e.target.value)
+                                    let shape = e.target.value;
+                                    this.setState(()=>({shape}));
+                                    
                                 }}
                                 className="filters__input"
                             >
@@ -173,7 +221,9 @@ export class TreeFilters extends React.Component {
                             <div 
                                 name="lobing"
                                 onChange={(e)=>{
-                                    this.props.setLobingFilter(e.target.value)
+                                    let lobing = e.target.value;
+                                    this.setState(()=>({lobing}));
+                                    
                                 }}
                                 className="filters__input"
                             >
@@ -192,7 +242,9 @@ export class TreeFilters extends React.Component {
                                 <div 
                                     name="texture"
                                     onChange={(e)=>{
-                                        this.props.setTextureFilter(e.target.value)
+                                        let texture = e.target.value;
+                                        this.setState(()=>({texture}));
+                                        
                                     }}
                                     className="filters__input"
                                 >
@@ -217,7 +269,9 @@ export class TreeFilters extends React.Component {
                                 <div 
                                     name="dryFruits"
                                     onChange={(e)=>{
-                                        this.props.setDryFilter(e.target.value)
+                                        let dryFruits = e.target.value;
+                                        this.setState(()=>({dryFruits}));
+                                        
                                     }}
                                     className="filters__input"
                                 >
@@ -243,7 +297,9 @@ export class TreeFilters extends React.Component {
                                 <div 
                                     name="fleshyFruits"
                                     onChange={(e)=>{
-                                        this.props.setFleshyFilter(e.target.value)
+                                        let fleshyFruits = e.target.value;
+                                        this.setState(()=>({fleshyFruits}));
+                                        
                                     }} 
                                     className="filters__input"                    
                                 >
@@ -264,7 +320,9 @@ export class TreeFilters extends React.Component {
                                 <div 
                                     name="other"
                                     onChange={(e)=>{
-                                        this.props.setOtherFilter(e.target.value)
+                                        let other = e.target.value;
+                                        this.setState(()=>({other}));
+                                        
                                     }}
                                     className="filters__input"
                                 >
