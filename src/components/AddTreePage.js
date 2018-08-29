@@ -13,7 +13,7 @@ export class AddTreePage extends React.Component {
         return (
             <div className="new-tree">
                 <h1 className="new-tree__title">Submit New Tree</h1>
-                
+                <p className="new-tree__required">* Required Fields</p>
                 <TreeForm
                     onSubmit={this.onSubmit}
                 />

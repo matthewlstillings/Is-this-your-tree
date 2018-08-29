@@ -29,6 +29,8 @@ export class TreeFilters extends React.Component {
             //Collapsible
             const collapsible = e.target.parentNode.parentNode.getElementsByClassName("filters__input")[0];
             collapsible.classList.toggle("active");
+            const styledSelect = e.target.parentNode.parentNode.getElementsByClassName("styled-select")[0];
+            styledSelect.classList.toggle("active");
         }
         e.stopPropagation();
         
@@ -60,11 +62,7 @@ export class TreeFilters extends React.Component {
             <form className="filters">
                 <p className="filters__description">Use these tree properties to find your tree!</p>
                 <div className="filters__names__container">
-                    <div className="styled-select"
-                                onClick={this.expandForm}
-                            >
-                                <h1 className="filters__form-titles">Names</h1>
-                    </div> 
+                    <h1 className="filters__form-titles">Names</h1>
                     <div className="filters__input-container is-names__container">
                         <input type="text" name="commonName" placeholder="Common Name" 
                             onChange={(e)=>{

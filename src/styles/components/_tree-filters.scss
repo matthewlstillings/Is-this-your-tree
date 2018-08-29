@@ -9,46 +9,9 @@
     padding: 0 .4rem;
 }
 
-.filters__title {
-    color: $red;
-    margin: 10px 0 10px 1rem;
-}
-
 .filters__form-titles {
     margin: 1rem auto 3rem;
-}
-
-.filters__input__container {
-    display:flex;
-    justify-content: space-between;
-    flex-flow: wrap;
     text-align: center;
-    width: 100%;
-}
-
-.filters__form {
-    width: 100%;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.filters__input {
-    border-bottom: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    width: 100%;
-    padding: 0;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease-out;
-    & > * {
-        text-align: center;
-        width: 50%;
-        padding: 1rem;
-    }
 }
 
 .is-names__container {
@@ -73,19 +36,64 @@ input[type="radio"] {
     }
 }
 
-.filter {
-    padding: 0;
+.filters__input__container {
+    display:flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    text-align: center;
+    width: 100%;
 }
 
-label  {
-    display: block;
+.filters__form {
+    width: 100%;
+}
+
+.styled-select {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 1.3rem 0 .3rem;
     cursor: pointer;
-    padding: 1rem;
-    transition: .4s all ease;
-    &:hover {
-        color: white;    
-        background: lighten($primary, 10%);
+    transition: all .2s ease-out;
+    h2 {
+        margin: 0;
     }
+    &:hover {
+        color: lighten($secondary, 50%);
+        background: lighten($primary, 20%);
+    }
+}
+
+.styled-select.active {
+    color: lighten($secondary, 50%);
+    background: lighten($primary, 10%);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.filters__input {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    & > * {
+        text-align: center;
+        width: 50%;
+        padding: 1rem;
+    }
+}
+
+.filters__input.active {
+    background: lighten($primary, 25%);
+    max-height: 300px;
 }
 
 .filters__input input[type="radio"]:checked + label {
@@ -93,22 +101,22 @@ label  {
     background: $primary !important;
 }
 
-.filters__input.active {
-    max-height: 300px;
-}
-
-.styled-select {
-    text-align: center;
-    overflow: hidden;
-    width: 100%;
-    margin: .3rem 0;
-    padding: 1rem 0 0;
+label  {
+    color: white;
+    display: block;
     cursor: pointer;
-    transition: background-color .5s ease-out, color .5s ease-out;
-    h2 {
-        margin: 0;
+    padding: 1rem;
+    transition: .4s all ease;
+    &:hover {
+        color: white;    
+        background: $primary;
     }
 }
+
+.filter { 
+    padding: 0;
+}
+
 
 .reset__button {
     @include buttons;

@@ -1,8 +1,13 @@
 .new-tree {
     max-width: 68.275rem; 
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 1rem 10rem;
     width: 100%;
+}
+
+.new-tree__required {
+    color: $red;
+    margin: -1.5rem 0 5rem;
 }
 
 .new-tree__image__container {
@@ -77,5 +82,9 @@
     width: 100%;
 }
 
-
+.new-tree__error {
+    color: $red;
+    font-size: 2rem;
+    margin: 1.5rem auto 0;
+}
 

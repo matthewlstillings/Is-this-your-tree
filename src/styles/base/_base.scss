@@ -5,7 +5,7 @@
 html {
     font-size: 62.5%;
     background: $background;
-    color: $secondary;
+    color: lighten($primary, 10%);
 }
 
 body {

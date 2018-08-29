@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {storage} from '../firebase/firebase';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {startAddNewTree} from '../actions/trees';
 
 
@@ -28,7 +26,8 @@ export class TreeForm extends React.Component {
             margins: props.tree ? props.tree.margins : "",
             info: props.tree ? props.tree.info : "none",
             flowers: props.tree ? props.tree.flowers : "none",
-            imagePreview: null
+            imagePreview: null,
+            error: false
         }  
         this.fileChange = this.fileChange.bind(this);  
     }
@@ -103,31 +102,39 @@ export class TreeForm extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.startAddNewTree({
-            image: this.state.image,
-            commonName: this.state.commonName,
-            latinName: this.state.latinName,
-            family: this.state.family, 
-            type: this.state.type,
-            venation: this.state.venation,
-            arrangement: this.state.arrangement,
-            lobing: this.state.lobing,
-            texture: this.state.texture,
-            shape: this.state.shape,
-            dryFruits: this.state.dryFruits,
-            fleshyFruits: this.state.fleshyFruits,
-            other: this.state.other,
-            margins: this.state.margins,
-            info: this.state.info,
-            flowers: this.state.flowers
-            
-        });
-        this.props.onSubmit();
+        if(!this.state.image   || !this.state.commonName || !this.state.latinName   || !this.state.family 
+        || !this.state.type    || !this.state.venation   || !this.state.arrangement || !this.state.lobing 
+        || !this.state.texture || !this.state.shape      || !this.state.dryFruits   || !this.state.fleshyFruits 
+        || !this.state.other   || !this.state.margins) 
+        { 
+            this.setState(()=>({error: true}));
+        } else {
+            this.props.startAddNewTree({
+                image: this.state.image,
+                commonName: this.state.commonName,
+                latinName: this.state.latinName,
+                family: this.state.family, 
+                type: this.state.type,
+                venation: this.state.venation,
+                arrangement: this.state.arrangement,
+                lobing: this.state.lobing,
+                texture: this.state.texture,
+                shape: this.state.shape,
+                dryFruits: this.state.dryFruits,
+                fleshyFruits: this.state.fleshyFruits,
+                other: this.state.other,
+                margins: this.state.margins,
+                info: this.state.info,
+                flowers: this.state.flowers
+                
+            });
+            this.props.onSubmit();
+        }
     }
     render() {
         return (
             <div>
-                <h2 className="new-tree__image__title">Image:</h2>
+                <h2 className="new-tree__image__title">*Image:</h2>
                 <div className="new-tree__image__container">
                     <label htmlFor="upload" className="new-tree__image-upload">
                         Choose File</label>
@@ -139,7 +146,7 @@ export class TreeForm extends React.Component {
                 </div>
                 
                 <form onSubmit={this.onSubmit} className="new-tree__properties__form">
-                    <h2 className="new-tree__image__title">Names:</h2>
+                    <h2 className="new-tree__image__title">*Names:</h2>
                     <div className="new-tree__properties__form-input__container">
                         
                         <input type="text" name="commonName" placeholder="Common Name" 
@@ -299,10 +306,10 @@ export class TreeForm extends React.Component {
                             className="new-tree__properties__form-input"
                         />
                     </div>
-                
+                    {this.state.error && <p className="new-tree__error">Please fill all fields.</p>}
                     <button className="new-tree__submit-button" type="submit">Submit</button>
                 </form>
-            
+                
             </div>
         )
     }

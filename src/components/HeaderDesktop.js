@@ -10,7 +10,7 @@ export const HeaderDesktop = () => (
         </div>
         <div className="header__leaf-container is-desktop">
             <div>
-                <FontAwesomeIcon icon={faLeaf} className="header__leaf is-desktop"/>
+                <a href="/"><FontAwesomeIcon icon={faLeaf} className="header__leaf is-desktop"/></a>
             </div>
         </div>
     </div>
