@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charser="UTF-8">
+        <title>Is This Your Tree?</title>
+        <style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible; }
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em; }
+  .svg-inline--fa.fa-lg {
+    vertical-align: -.225em; }
+  .svg-inline--fa.fa-w-1 {
+    width: 0.0625em; }
+  .svg-inline--fa.fa-w-2 {
+    width: 0.125em; }
+  .svg-inline--fa.fa-w-3 {
+    width: 0.1875em; }
+  .svg-inline--fa.fa-w-4 {
+    width: 0.25em; }
+  .svg-inline--fa.fa-w-5 {
+    width: 0.3125em; }
+  .svg-inline--fa.fa-w-6 {
+    width: 0.375em; }
+  .svg-inline--fa.fa-w-7 {
+    width: 0.4375em; }
+  .svg-inline--fa.fa-w-8 {
+    width: 0.5em; }
+  .svg-inline--fa.fa-w-9 {
+    width: 0.5625em; }
+  .svg-inline--fa.fa-w-10 {
+    width: 0.625em; }
+  .svg-inline--fa.fa-w-11 {
+    width: 0.6875em; }
+  .svg-inline--fa.fa-w-12 {
+    width: 0.75em; }
+  .svg-inline--fa.fa-w-13 {
+    width: 0.8125em; }
+  .svg-inline--fa.fa-w-14 {
+    width: 0.875em; }
+  .svg-inline--fa.fa-w-15 {
+    width: 0.9375em; }
+  .svg-inline--fa.fa-w-16 {
+    width: 1em; }
+  .svg-inline--fa.fa-w-17 {
+    width: 1.0625em; }
+  .svg-inline--fa.fa-w-18 {
+    width: 1.125em; }
+  .svg-inline--fa.fa-w-19 {
+    width: 1.1875em; }
+  .svg-inline--fa.fa-w-20 {
+    width: 1.25em; }
+  .svg-inline--fa.fa-pull-left {
+    margin-right: .3em;
+    width: auto; }
+  .svg-inline--fa.fa-pull-right {
+    margin-left: .3em;
+    width: auto; }
+  .svg-inline--fa.fa-border {
+    height: 1.5em; }
+  .svg-inline--fa.fa-li {
+    width: 2em; }
+  .svg-inline--fa.fa-fw {
+    width: 1.25em; }
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -.125em;
+  width: 1em; }
+  .fa-layers svg.svg-inline--fa {
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+
+.fa-layers-text, .fa-layers-counter {
+  display: inline-block;
+  position: absolute;
+  text-align: center; }
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center; }
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: .25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right; }
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right; }
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left; }
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right; }
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left; }
+
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -.0667em; }
+
+.fa-xs {
+  font-size: .75em; }
+
+.fa-sm {
+  font-size: .875em; }
+
+.fa-1x {
+  font-size: 1em; }
+
+.fa-2x {
+  font-size: 2em; }
+
+.fa-3x {
+  font-size: 3em; }
+
+.fa-4x {
+  font-size: 4em; }
+
+.fa-5x {
+  font-size: 5em; }
+
+.fa-6x {
+  font-size: 6em; }
+
+.fa-7x {
+  font-size: 7em; }
+
+.fa-8x {
+  font-size: 8em; }
+
+.fa-9x {
+  font-size: 9em; }
+
+.fa-10x {
+  font-size: 10em; }
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em; }
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit; }
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: .1em;
+  padding: .2em .25em .15em; }
+
+.fa-pull-left {
+  float: left; }
+
+.fa-pull-right {
+  float: right; }
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: .3em; }
+
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: .3em; }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear; }
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1); }
+
+.fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  -webkit-filter: none;
+          filter: none; }
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2em; }
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1em; }
+
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2em; }
+
+.fa-inverse {
+  color: #fff; }
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+</style><link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/pine.png">
+        <link rel="stylesheet" type="text/css" href="./Is This Your Tree__files/styles.css">
+        <link rel="stylesheet" type="text/css" href="./Is This Your Tree__files/normalize.css">
+    <style></style></head>
+    <body class="body unlock" cz-shortcut-listen="true">
+        <div id="root"><div><header class="header"><div class="header__container is-desktop"><div class="header__content is-desktop"><h1 class="header__title is-desktop">Is This Your Tree?</h1><h3 class="header__subtitle is-desktop">Find your tree from Central Park</h3></div><div class="header__leaf-container is-desktop"><div><a href="http://localhost:8080/"><svg aria-hidden="true" data-prefix="fas" data-icon="leaf" class="svg-inline--fa fa-leaf fa-w-18 header__leaf is-desktop" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M546.2 9.7c-5.6-12.5-21.6-13-28.3-1.2C486.9 62.4 431.4 96 368 96h-80C182 96 96 182 96 288c0 7 .8 13.7 1.5 20.5C161.3 262.8 253.4 224 384 224c8.8 0 16 7.2 16 16s-7.2 16-16 16C132.6 256 26 410.1 2.4 468c-6.6 16.3 1.2 34.9 17.5 41.6 16.4 6.8 35-1.1 41.8-17.3 1.5-3.6 20.9-47.9 71.9-90.6 32.4 43.9 94 85.8 174.9 77.2C465.5 467.5 576 326.7 576 154.3c0-50.2-10.8-102.2-29.8-144.6z"></path></svg></a></div></div></div></header><div class="dashboard"><form class="filters"><p class="filters__description">Use these tree properties to find your tree!</p><div class="filters__names__container"><h1 class="filters__form-titles">Names</h1><div class="filters__input-container is-names__container"><input type="text" name="commonName" placeholder="Common Name" class="filters__names-input"><input type="text" name="latinName" placeholder="Latin Name" class="filters__names-input"></div></div><div class="filters__leaves-container"><div class="filters__input__container"><h1 class="filters__form-titles">Leaves</h1><div class="filters__form"><div class="styled-select first-select"><h2>Type</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="type" class="filters__input"><div class="filter"><input type="radio" name="type" value="simple" id="simple"><label for="simple">Simple</label></div><div class="filter"><input type="radio" name="type" value="compound" id="compound"><label for="compound">Compound</label></div><div class="filter"><input type="radio" name="type" value="bicompound" id="bicompound"><label for="bicompound">Bicompound</label></div><div class="filter"><input type="radio" name="type" value="trifoliate" id="trifoliate"><label for="trifoliate">Trifoliate</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Venation</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="venation" class="filters__input"><div class="filter"><input type="radio" name="venation" id="arcuate" value="arcuate"><label for="arcuate">Arcuate</label></div><div class="filter"><input type="radio" name="venation" id="palmate" value="palmate"><label for="palmate">Palmate</label></div><div class="filter"><input type="radio" name="venation" id="parallel" value="parallel"><label for="parallel">Parallel</label></div><div class="filter"><input type="radio" name="venation" id="pinnate" value="pinnate"><label for="pinnate">Pinnate</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Arrangement</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="arrangement" class="filters__input"><div class="filter"><input type="radio" name="arrangement" id="opposite" value="opposite"><label for="opposite">Opposite</label></div><div class="filter"><input type="radio" name="arrangement" id="subopposite" value="subopposite"><label for="subopposite">Sub-Opposite</label></div><div class="filter"><input type="radio" name="arrangement" id="alternate" value="alternate"><label for="alternate">Alternate</label></div><div class="filter"><input type="radio" name="arrangement" id="whorled" value="whorled"><label for="whorled">Whorled</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Margins</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="margins" class="filters__input"><div class="filter"><input type="radio" name="margins" id="entire" value="entire"><label for="entire">Entire</label></div><div class="filter"><input type="radio" name="margins" id="serrate" value="serrate"><label for="serrate">Serrate</label></div><div class="filter"><input type="radio" name="margins" id="dentate" value="dentate"><label for="dentate">Dentate</label></div><div class="filter"><input type="radio" name="margins" id="toothed" value="toothed"><label for="toothed">Toothed</label></div><div class="filter"><input type="radio" name="margins" id="spiny" value="spiny"><label for="spiny">Spiny</label></div><div class="filter"><input type="radio" name="margins" id="doublySerrate" value="doublySerrate"><label for="doublySerrate">Doubly Serrate</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Shape</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="shape" class="filters__input"><div class="filter"><input type="radio" name="shape" id="spoon" value="spoon"><label for="spoon">Spoon</label></div><div class="filter"><input type="radio" name="shape" id="lobed" value="lobed"><label for="lobed">Lobed</label></div><div class="filter"><input type="radio" name="shape" id="cordate" value="cordate"><label for="cordate">Cordate</label></div><div class="filter"><input type="radio" name="shape" id="linear" value="linear"><label for="linear">Linear</label></div><div class="filter"><input type="radio" name="shape" id="needle" value="needle"><label for="needle">Needle</label></div><div class="filter"><input type="radio" name="shape" id="elliptic" value="elliptic"><label for="elliptic">Elliptic</label></div><div class="filter"><input type="radio" name="shape" id="lanceolate" value="lanceolate"><label for="lanceolate">Lanceolate</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Lobing</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="lobing" class="filters__input"><div class="filter"><input type="radio" name="lobing" id="pinnately" value="pinnately"><label for="pinnately">Pinnately</label></div><div class="filter"><input type="radio" name="lobing" id="palmately" value="palmately"><label for="palmately">Palmately</label></div><div class="filter"><input type="radio" name="lobing" id="irregularly" value="irregular"><label for="irregularly">Irregularly</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Texture</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="texture" class="filters__input"><div class="filter"><input type="radio" name="texture" id="rough" value="rough"><label for="rough">Rough</label></div><div class="filter"><input type="radio" name="texture" id="smooth" value="smooth"><label for="smooth">Smooth</label></div><div class="filter"><input type="radio" name="texture" id="hairy" value="hairy"><label for="hairy">Hairy</label></div></div></div></div></div><div class="filters__fruits-container"><div class="filters__input__container"><h1 class="filters__form-titles">Fruits</h1><div class="filters__form"><div class="styled-select"><h2>Dry Fruits</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="dryFruits" class="filters__input"><div class="filter"><input type="radio" name="dryFruits" id="achene" value="achene"><label for="achene">Achene</label></div><div class="filter"><input type="radio" name="dryFruits" id="capsule" value="capsule"><label for="capsule">Capsule</label></div><div class="filter"><input type="radio" name="dryFruits" id="caryopse" value="caryopse"><label for="caryopse">Caryopse</label></div><div class="filter"><input type="radio" name="other" id="cone" value="cone"><label for="cone">Cone</label></div><div class="filter"><input type="radio" name="dryFruits" id="follicle" value="follicle"><label for="follicle">Follicle</label></div><div class="filter"><input type="radio" name="dryFruits" id="legume" value="legume"><label for="legume">Legume</label></div><div class="filter"><input type="radio" name="dryFruits" id="nut" value="nut"><label for="nut">Nut</label></div><div class="filter"><input type="radio" name="dryFruits" id="samara" value="samara"><label for="samara">Samara</label></div><div class="filter"><input type="radio" name="dryFruits" id="schizocarp" value="schizocarp"><label for="schizocarp">Schizocarp</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Fleshy Fruits</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="fleshyFruits" class="filters__input"><div class="filter"><input type="radio" name="fleshyFruits" id="berry" value="berry"><label for="berry">Berry</label></div><div class="filter"><input type="radio" name="fleshyFruits" id="drupe" value="drupe"><label for="drupe">Drupe</label></div><div class="filter"><input type="radio" name="fleshyFruits" id="pepo" value="pepo"><label for="pepo">Pepo</label></div><div class="filter"><input type="radio" name="fleshyFruits" id="pomes" value="pomes"><label for="pomes">Pomes</label></div></div></div><div class="filters__form"><div class="styled-select"><h2>Other</h2><svg aria-hidden="true" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 chevron" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></div><div name="other" class="filters__input"><div class="filter"><input type="radio" name="other" id="aggregate" value="aggregate"><label for="aggregate">Aggregate</label></div><div class="filter"><input type="radio" name="other" id="multiple" value="multiple"><label for="multiple">Multiple</label></div></div></div><button type="reset" class="reset__button">Clear</button></div></div></form><div class="dashboard__tree-list"><ul class="tree__list"><div class="react-reveal tree" style="animation-fill-mode: both; animation-duration: 500ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-722328583383226-1;"><img src="./Is This Your Tree__files/american_beech.jpeg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">American Beech</h1><p class="tree__name is-latin"><i>Fagus grandifolia</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Fagaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Small, not showy.</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> Tree-winged nuts in spiky involucre.</p></div></div><div class="react-reveal tree" style="animation-fill-mode: both; animation-duration: 500ms; animation-delay: 100ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-722328583383226-1;"><img src="./Is This Your Tree__files/american_elm.jpg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">American Elm</h1><p class="tree__name is-latin"><i>Ulmus americana</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Ulmaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Small, not showy.</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> Samaras round with notch.</p></div></div><div class="react-reveal tree" style="animation-fill-mode: both; animation-duration: 500ms; animation-delay: 200ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-722328583383226-1;"><img src="./Is This Your Tree__files/american_holly.jpg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">American Holly</h1><p class="tree__name is-latin"><i>Ilex opaca</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Aquifoliaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Greenish and small</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> Spinked leaves, with waxy texture.</p></div></div><div class="react-reveal tree" style="animation-fill-mode: both; animation-duration: 500ms; animation-delay: 300ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-722328583383226-1;"><img src="./Is This Your Tree__files/american_hornbeam.jpg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">American Hornbeam</h1><p class="tree__name is-latin"><i>Carpinus caroliniana</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Betulaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Small in catkins.</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> 3-lobed bracts.</p></div></div><div class="react-reveal tree"><img src="./Is This Your Tree__files/american_larch.jpg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">American Larch</h1><p class="tree__name is-latin"><i>Larix laricina</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Pinaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Yellow-green or red</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> Upright cones, stay on branch for 1-2 years.</p></div></div><div class="react-reveal tree"><img src="./Is This Your Tree__files/redbud.jpg" class="tree__image"><div class="tree__name-container"><h1 class="tree__name is-common">Eastern Redbud</h1><p class="tree__name is-latin"><i>Cercis canadensis</i></p></div><hr class="tree__line"><div class="tree__info"><p class="tree__info-child"><span class="tree__info-child--title"><b>Family</b></span> Fabaceae</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Flowers</b></span> Small, pink.</p><p class="tree__info-child"><span class="tree__info-child--title"><b>Info</b></span> Heart-shaped leaves.</p></div></div></ul></div></div></div></div>
+        
+        <script src="./Is This Your Tree__files/bundle.js"></script>
+    
+</body></html>

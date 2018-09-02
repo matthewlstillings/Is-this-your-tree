@@ -20,5 +20,9 @@ export default (trees,
         return commonNameMatch && latinNameMatch  && leafTypeMatch && venationMatch
                && arrangementMatch && lobingMatch && textureMatch && shapeMatch && dryFruitsMatch
                && fleshyFruitsMatch && otherMatch && marginsMatch;
+    }).sort((a, b)=>{
+        let textA = a.commonName.toLowerCase();
+        let textB = b.commonName.toLowerCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     })
 }

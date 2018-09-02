@@ -14,7 +14,7 @@ export class TreeForm extends React.Component {
             commonName: props.tree ? props.tree.commonName : "none",
             latinName: props.tree ? props.tree.latinName : "none",
             family: props.tree ? props.tree.family : "none",
-            type: props.tree ? props.tree.type : "",
+            leafType: props.tree ? props.tree.type : "",
             venation: props.tree ? props.tree.venation : "",
             arrangement: props.tree ? props.tree.arrangement : "",
             lobing: props.tree ? props.tree.lobing : "",
@@ -45,8 +45,8 @@ export class TreeForm extends React.Component {
          this.setState(()=>({family}))
     }
     typeChange = (e) => {
-         const type = e.target.value;
-         this.setState(()=>({type}))
+         const leafType = e.target.value;
+         this.setState(()=>({leafType}))
     }
     venationChange = (e) => {
          const venation = e.target.value;
@@ -103,9 +103,7 @@ export class TreeForm extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         if(!this.state.image   || !this.state.commonName || !this.state.latinName   || !this.state.family 
-        || !this.state.type    || !this.state.venation   || !this.state.arrangement || !this.state.lobing 
-        || !this.state.texture || !this.state.shape      || !this.state.dryFruits   || !this.state.fleshyFruits 
-        || !this.state.other   || !this.state.margins) 
+        ) 
         { 
             this.setState(()=>({error: true}));
         } else {
@@ -114,7 +112,7 @@ export class TreeForm extends React.Component {
                 commonName: this.state.commonName,
                 latinName: this.state.latinName,
                 family: this.state.family, 
-                type: this.state.type,
+                leafType: this.state.leafType,
                 venation: this.state.venation,
                 arrangement: this.state.arrangement,
                 lobing: this.state.lobing,

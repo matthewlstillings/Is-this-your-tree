@@ -12,13 +12,16 @@
 
 .new-tree__image__container {
     padding: 1rem;
+    p {
+        margin-left: 1.3rem;
+    }
 }
 
 .new-tree__image-upload {
     @include buttons;
     margin-bottom: 2rem;
     text-align: center;
-    width: 30%;
+    width: 50%;
 }
 
 .new-tree__image-upload-button {

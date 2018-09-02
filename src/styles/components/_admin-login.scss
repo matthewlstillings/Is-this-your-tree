@@ -1,0 +1,42 @@
+.admin__log-in {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: auto;
+    min-height: 600px;
+    position: absolute;
+    width: 100%;
+}
+
+.admin__log-in__title {
+    color: $primary;
+    transform: translateY(-100%);
+}
+
+.admin__log-in__form {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    transform: translateY(-100%);
+    width: 90%;
+}
+
+.admin__log-in__form-input {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px solid $primary;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.admin__log-in__form-button {
+    @include buttons;
+    padding: 1.4rem 1rem;
+    width: 100%;
+}
+

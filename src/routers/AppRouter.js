@@ -5,11 +5,12 @@ import HeaderContainer from '../components/HeaderContainer';
 import DashboardPage from '../components/Dashboard';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/404page';
-import { AddTreePage } from '../components/AddTreePage';
-
-//import PublicRoute from './PublicRoute';
-//import LogIn from '../components/Log-in';
-//import PrivateRoute from './PrivateRoute';
+import { AddTreePage } from '../components/Admin/AddTreePage';
+import CreateAdmin from '../components/Admin/CreateAdmin';
+import AdminPage from '../components/Admin/AdminPage';
+import PublicRoute from './PublicRoute';
+import AdminLogin from '../components/Admin/AdminLogin';
+import PrivateRoute from './PrivateRoute';
 
 export const history = createHistory();
 
@@ -23,7 +24,12 @@ const AppRouter = () => (
                     component={DashboardPage}
                     exact={true}
                 />
-                <Route
+                <PublicRoute 
+                    path="/admin-login"
+                    component={AdminLogin}
+                />
+                
+                <PrivateRoute
                     path="/add-tree"
                     component={AddTreePage}
                 />
@@ -31,9 +37,16 @@ const AppRouter = () => (
                     path="/help"
                     component={HelpPage}
                 />
-                <Route
-                    component={NotFoundPage}
+                <PrivateRoute
+                    path="/new-admin"
+                    component={CreateAdmin}
                 />
+                <PrivateRoute
+                    path="/admin"
+                    component={AdminPage}
+                />
+                
+                
             </Switch>
         </div>     
     </Router>

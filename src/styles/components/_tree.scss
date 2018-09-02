@@ -10,22 +10,6 @@
     width: 85%;
 }
 
-.tree.is-loaded {
-    animation: loadIn .5s linear forwards;
-}
-
-@keyframes loadIn {
-    0% {
-        margin-top: 40px;
-        opacity: 0;
-    }
-    100% {
-        margin-top: 10px;
-        opacity: 1;
-    }
-}
-
-
 .tree__image {
     border-radius: 10px 10px 0 0;
     height: 260px;

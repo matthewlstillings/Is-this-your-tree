@@ -4,7 +4,8 @@ import {Provider, connect} from 'react-redux';
 import AppRouter, {history} from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import {startSetTreeList} from './actions/trees'
-//import {login, logout} from './actions/auth';
+import {login, logout} from './actions/auth';
+import {firebase} from './firebase/firebase';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { setTimeout } from 'timers';
@@ -19,19 +20,24 @@ window.onbeforeunload = () => {
 //Build Store
 const store = configureStore();
 
+
 //Pull tree list from firebase
 const findTrees = () => {
     store.dispatch(startSetTreeList());
 } 
 findTrees();  
-    
+
+setInterval(()=>{
+    //console.log(store.getState().trees);
+}, 3000);
+
+
 //Calls app using provider from react-store
 const jsx = (
     <Provider store = {store}>
         <AppRouter />
     </Provider>
 ); 
-
 
 
 //Shrink Header if on mobile view
@@ -54,28 +60,17 @@ const renderApp = () => {
          //setTimeout(() => {addHeaderActiveClass()}, 200);
     }
 };
-renderApp();
 
-
-
-
-{/*
 
 //Login Actions
 firebase.auth().onAuthStateChanged((user)=>{ //Firebase Functions
     if (user) {
         store.dispatch(login(user.uid));
-        renderApp()
-        if (history.location.pathname === '/') {
-            history.push('/dashboard');
-        }
-       
+        renderApp();
     } else {
         store.dispatch(logout());
         renderApp();
-        history.push('/');
     }
 })
-
-*/}
+ 
 

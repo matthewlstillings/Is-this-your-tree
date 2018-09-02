@@ -1,0 +1,119 @@
+.admin-page {
+    margin: auto;
+    max-width: 1500px;
+    width: 100%;
+}
+
+.admin-page__title {
+    text-align: center;
+    width: 100%;
+}
+
+.admin-page__links {
+    border-bottom: 1px solid $secondary;
+    display: flex;
+    width: 100%;
+    & > * {
+        flex: 1;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+.admin-page__logout-button {
+    p {
+        margin: 0
+    }
+}
+
+
+
+
+///Admin Tree List
+
+.admin-page__tree-list-wrapper {
+    padding: 1rem 0 1rem 1rem;
+}
+
+.admin-page__tree-list-title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.admin-page__tree {
+    border-bottom: 1px solid $secondary;
+    max-width: 2000px;
+}
+
+.admin-page__tree-name__container {
+    padding: .3rem;
+}
+
+.admin-page__tree-name__title {
+    padding: .5rem;
+    margin: 0;
+}
+
+.admin-page__tree-info__container {
+    color: rgb(139, 139, 139);
+    max-height: 0;
+    padding-left: .5rem;
+    overflow: hidden;
+    transition: all .2s linear;
+    width: 100%;
+}
+
+
+.admin-page__tree-info__container.active {
+    border-bottom: 1px solid $secondary;
+    max-height: 600px;
+    padding: .5rem;
+}
+
+
+.admin-page__tree-info__title {
+    margin: 1rem 0 .5rem;
+}
+
+
+.admin-page__tree-name {
+    font-size: 1.3rem;
+    padding: .5rem;
+    margin: 0;
+}
+
+.admin-page__tree-name.is-family {
+    text-transform: capitalize;
+}
+
+.admin-page__tree-name.is-prop {
+    text-transform: capitalize;
+}
+
+.admin-page__tree-quan {
+    font-weight: bold;
+}
+
+.admin-page__delete-button {
+    @include buttons;
+    background: $red;
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    max-height: 45px;
+}
+
+@media (min-width: $tablet-breakpoint) {
+    .admin-page__tree-info__container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .admin-page__tree-info__container.active {
+        padding-bottom: 1.4rem;
+    }
+    .admin-page__tree-info__title {
+        margin-top: .5rem;
+    }
+    .admin-page__delete-button {
+        margin: 1rem 1.4rem 0 0;
+    }
+}

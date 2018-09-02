@@ -11,7 +11,7 @@ export const startAddNewTree = (treeData = {}) => {
         const {
             commonName= '',
             latinName= '',
-            type= '',
+            leafType= '',
             venation= '',
             arrangement= '',
             lobing= '',
@@ -26,9 +26,10 @@ export const startAddNewTree = (treeData = {}) => {
             info='',
             family=''
         } = treeData;
-        const tree = {image, family, margins, type, venation, arrangement, lobing, texture, shape, flowers, info, dryFruits, fleshyFruits, other, commonName, latinName};
+        const tree = {image, family, margins, leafType, venation, arrangement, lobing, texture, shape, flowers, info, dryFruits, fleshyFruits, other, commonName, latinName};
         return database.ref().push(tree).then(()=>{
             dispatch(addNewTree({
+                id: ref.key,
                 ...tree
             }))
         });
@@ -48,10 +49,24 @@ export const startSetTreeList = () => {
             const treeList = [];
             snapshot.forEach((childSnapshot) => {
                 treeList.push({
+                    id: childSnapshot.key,
                     ...childSnapshot.val()
                 })
             })
             dispatch(setTreeList(treeList));
         })
     }
+};
+
+export const removeTree = ({id} = {}) => ({
+    type: 'REMOVE_TREE',
+    id
+});
+
+export const startRemoveTree = ({id} = {}) => {
+    return (dispatch, getState) => {
+        return database.ref(`${id}`).remove().then((ref) => {
+            dispatch(removeTree({id}));
+        });
+    };
 };
