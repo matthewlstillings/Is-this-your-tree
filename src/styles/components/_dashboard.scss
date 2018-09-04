@@ -1,7 +1,8 @@
-
 //Responsive Dashboard
 @media (min-width: $tablet-breakpoint) {
     .dashboard {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         border-left: 1px solid black;
         border-right: 1px solid black;

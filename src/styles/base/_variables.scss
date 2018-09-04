@@ -22,16 +22,20 @@ $main-font: 'Nunito Sans', sans-serif;
 //Mixins
 @mixin buttons {
     border: none;
-    box-shadow: inset 0 0 0 0 rbga(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 0 0 rbga(0, 0, 0, 0);
+            box-shadow: inset 0 0 0 0 rbga(0, 0, 0, 0);
     background: $primary;
     color: white;
     padding: 1rem;
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
     transition: all .4s linear;
     &:hover {
         background: lighten($primary, 5%);
     }
     &:active {
         background: darken($primary, 5%);
-        box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .4) 
+        -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .4);
+                box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, .4) 
     }
 }

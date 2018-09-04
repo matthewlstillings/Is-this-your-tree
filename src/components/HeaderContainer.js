@@ -23,13 +23,13 @@ export class Header extends React.Component {
         } else if (window.innerWidth >= 794.8) {
             this.setState(()=>({header: 'desktop'}));
         } else {
-            this.setState(()=>({header: 'add-tree'}));//change this back to mobile
+            this.setState(()=>({header: 'mobile'}));//change this back to mobile
         }
     }
     unlockApp = () => {
         this.setState(()=>({unlocked: true}));
         const body = document.getElementsByClassName('body')[0];
-        body.classList.add('unlock');
+        body.classList.add('unlocked');
     }
     handleWidthChange = (windowWidth, event) => {
             this.setState({windowWidth: window.innerWidth})

@@ -15,9 +15,16 @@
 }
 
 .is-names__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0rem 0 2rem;
     width: 100%;
 }
@@ -30,6 +37,18 @@
     margin: 1rem auto;
     width: 90%;
     padding: 1rem .5rem;
+    &::-webkit-input-placeholder {
+        font-size: 1.5rem;
+        color: black;
+    }
+    &:-ms-input-placeholder {
+        font-size: 1.5rem;
+        color: black;
+    }
+    &::-ms-input-placeholder {
+        font-size: 1.5rem;
+        color: black;
+    }
     &::placeholder {
         font-size: 1.5rem;
         color: black;
@@ -37,9 +56,14 @@
 }
 
 .filters__input__container {
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    justify-content: space-between;
-    flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
     text-align: center;
     width: 100%;
 }
@@ -55,6 +79,8 @@
     margin: 0;
     padding: 1.3rem 0 .3rem;
     cursor: pointer;
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
     transition: all .2s ease-out;
     h2 {
         margin: 0;
@@ -76,13 +102,21 @@ input[type="radio"] {
 
 .filters__input {
     border-bottom: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
     width: 100%;
     padding: 0;
     overflow: hidden;
     max-height: 0;
+    -webkit-transition: max-height 0.4s ease-out;
+    -o-transition: max-height 0.4s ease-out;
     transition: max-height 0.4s ease-out;
     & > * {
         text-align: center;
@@ -106,6 +140,8 @@ label  {
     display: block;
     cursor: pointer;
     padding: 1rem;
+    -webkit-transition: .4s all ease;
+    -o-transition: .4s all ease;
     transition: .4s all ease;
     &:hover {
         color: white;    
@@ -127,11 +163,17 @@ label  {
 
 .chevron {
     margin-top: .4rem;
+    -webkit-transition: -webkit-transform .32s linear;
+    transition: -webkit-transform .32s linear;
+    -o-transition: transform .32s linear;
     transition: transform .32s linear;
+    transition: transform .32s linear, -webkit-transform .32s linear;
 }
 
 .chevron.active {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 

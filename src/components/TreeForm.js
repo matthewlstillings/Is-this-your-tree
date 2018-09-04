@@ -102,7 +102,7 @@ export class TreeForm extends React.Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        if(!this.state.image   || !this.state.commonName || !this.state.latinName   || !this.state.family 
+        if(!this.state.image  || !this.state.commonName || !this.state.latinName || !this.state.family 
         ) 
         { 
             this.setState(()=>({error: true}));

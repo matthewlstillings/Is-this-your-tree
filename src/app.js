@@ -20,17 +20,11 @@ window.onbeforeunload = () => {
 //Build Store
 const store = configureStore();
 
-
 //Pull tree list from firebase
 const findTrees = () => {
     store.dispatch(startSetTreeList());
 } 
 findTrees();  
-
-setInterval(()=>{
-    //console.log(store.getState().trees);
-}, 3000);
-
 
 //Calls app using provider from react-store
 const jsx = (
@@ -42,7 +36,10 @@ const jsx = (
 
 //Shrink Header if on mobile view
 const unlockBody = () => {
-    if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree') {
+    if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree' 
+    || document.URL === 'https://is-this-your-tree.herokuapp.com/admin' 
+    || document.URL === 'https://is-this-your-tree.herokuapp.com/admin-login' 
+    || document.URL === 'https://is-this-your-tree.herokuapp.com/new-admin')  {
         //Unlock the body
         const body = document.getElementsByClassName('body')[0];
         body.classList.add('unlock');

@@ -4,9 +4,6 @@ import Tree from './Trees';
 import selectTrees from '../filters/trees';
 
 export class TreeList extends React.Component {
-    componentDidMount = () => {
-        setInterval(()=>{console.log(this.props.trees)}, 2000)
-    }
     render() {
         return (
             <div className="dashboard__tree-list" >
