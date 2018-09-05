@@ -20,11 +20,17 @@ window.onbeforeunload = () => {
 //Build Store
 const store = configureStore();
 
+
 //Pull tree list from firebase
 const findTrees = () => {
     store.dispatch(startSetTreeList());
 } 
 findTrees();  
+
+setInterval(()=>{
+    console.log(store.getState());
+}, 3000);
+
 
 //Calls app using provider from react-store
 const jsx = (

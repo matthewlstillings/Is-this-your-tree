@@ -1,5 +1,6 @@
 import database from '../firebase/firebase.js'
 
+//Add Trees
 export const addNewTree = (tree) => ({
     type: 'ADD_TREE',
     tree
@@ -37,6 +38,7 @@ export const startAddNewTree = (treeData = {}) => {
     };
 };
 
+//Set Trees
 export const setTreeList = (treeList) => ({
     type: 'SET_TREES',
     treeList
@@ -58,6 +60,7 @@ export const startSetTreeList = () => {
     }
 };
 
+///Remove tree actions
 export const removeTree = ({id} = {}) => ({
     type: 'REMOVE_TREE',
     id
@@ -70,3 +73,9 @@ export const startRemoveTree = ({id} = {}) => {
         });
     };
 };
+
+
+//Clear Tree Store 
+export const clearTrees = () => ({
+    type: 'CLEAR_TREES',
+})

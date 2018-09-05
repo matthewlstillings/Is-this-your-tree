@@ -8,6 +8,8 @@ export default (state = defaultTreeState, action) => {
         ];
         case 'REMOVE_TREE': 
             return state.filter(({id}) => id !== action.id);
+        case 'CLEAR_TREES': 
+            return [];
         case 'SET_TREES':
             return action.treeList;
         default:

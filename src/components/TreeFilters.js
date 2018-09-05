@@ -5,7 +5,8 @@ import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {setCommonFilter, setLatinFilter, setTypeFilter, 
         setVenationFilter, setArrangementFilter, setLobingFilter,
         setTextureFilter, setShapeFilter, setDryFilter, setFleshyFilter,
-        setOtherFilter, setMarginsFilter, clearFilter} from '../actions/filters';
+        setOtherFilter, setMarginsFilter} from '../actions/filters';
+import {clearTrees, startSetTreeList} from '../actions/trees';
 
 
 
@@ -35,6 +36,11 @@ export class TreeFilters extends React.Component {
         e.stopPropagation();
         
     }
+    clearTrees = () => {
+        this.props.clearTrees();
+        console.log('Cleared');
+        this.props.startSetTreeList();
+    }
     clearRadios = () => {
         let total = 0;
         const radio = document.querySelectorAll('input[type="radio"]');
@@ -44,6 +50,17 @@ export class TreeFilters extends React.Component {
             }
             console.log('doop');
         }
+        this.setState(()=>({type: ''}));
+        this.setState(()=>({venation: ''}));
+        this.setState(()=>({arrangement: ''}));
+        this.setState(()=>({margins: ''}));
+        this.setState(()=>({lobing: ''}));
+        this.setState(()=>({texture: ''}));
+        this.setState(()=>({shape: ''}));
+        this.setState(()=>({other: ''}));
+        this.setState(()=>({dryFruits: ''}));
+        this.setState(()=>({fleshyFruits: ''}));
+        this.clearTrees();
     }
     componentDidUpdate = () => {
         this.props.setTypeFilter(this.state.type);
@@ -97,6 +114,7 @@ export class TreeFilters extends React.Component {
                                     onChange={(e) => {
                                             let type = e.target.value;
                                             this.setState(()=>({type}));
+                                            this.clearTrees();
                                         }}
                                     className="filters__input"
                                     >
@@ -115,6 +133,7 @@ export class TreeFilters extends React.Component {
                                         let type = e.target.value;
                                         this.setState(()=>({type}));
                                     }}/><label htmlFor="trifoliate">Trifoliate</label></div>
+                                    <div className="filter"><input type="radio" name="type" id="none" value=""/><label htmlFor="none">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">  
@@ -129,7 +148,7 @@ export class TreeFilters extends React.Component {
                                     onChange={(e)=>{
                                         let venation = e.target.value;
                                         this.setState(()=>({venation}));
-                                        
+                                        this.clearTrees();
                                     }}
                                     className="filters__input"
                                 >
@@ -137,6 +156,7 @@ export class TreeFilters extends React.Component {
                                     <div className="filter"><input type="radio" name="venation" id="palmate" value="palmate"/><label htmlFor="palmate">Palmate</label></div>
                                     <div className="filter"><input type="radio" name="venation" id="parallel" value="parallel"/><label htmlFor="parallel">Parallel</label></div>
                                     <div className="filter"><input type="radio" name="venation" id="pinnate" value="pinnate"/><label htmlFor="pinnate">Pinnate</label></div>
+                                    <div className="filter"><input type="radio" name="venation" id="non" value=""/><label htmlFor="non">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">
@@ -151,7 +171,7 @@ export class TreeFilters extends React.Component {
                                     onChange={(e)=>{
                                         let arrangement = e.target.value;
                                         this.setState(()=>({arrangement}));
-                                        
+                                        this.clearTrees();
                                     }}
                                     className="filters__input"
                                 >
@@ -159,6 +179,7 @@ export class TreeFilters extends React.Component {
                                     <div className="filter"><input type="radio" name="arrangement" id="subopposite" value="subopposite"/><label htmlFor="subopposite">Sub-Opposite</label></div>
                                     <div className="filter"><input type="radio" name="arrangement" id="alternate" value="alternate"/><label htmlFor="alternate">Alternate</label></div>
                                     <div className="filter"><input type="radio" name="arrangement" id="whorled" value="whorled"/><label htmlFor="whorled">Whorled</label></div>
+                                    <div className="filter"><input type="radio" name="arrangement" id="nne" value=""/><label htmlFor="nne">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">
@@ -173,7 +194,7 @@ export class TreeFilters extends React.Component {
                                     onChange={(e)=>{
                                         let margins = e.target.value;
                                         this.setState(()=>({margins}));
-                                    
+                                        this.clearTrees();
                                     }}
                                     className="filters__input"
                                 >
@@ -183,6 +204,7 @@ export class TreeFilters extends React.Component {
                                     <div className="filter"><input type="radio" name="margins" id="toothed" value="toothed"/><label htmlFor="toothed">Toothed</label></div>
                                     <div className="filter"><input type="radio" name="margins" id="spiny" value="spiny"/><label htmlFor="spiny">Spiny</label></div>
                                     <div className="filter"><input type="radio" name="margins" id="doublySerrate" value="doublySerrate"/><label htmlFor="doublySerrate">Doubly Serrate</label></div>
+                                    <div className="filter"><input type="radio" name="margins" id="one" value=""/><label htmlFor="one">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">
@@ -197,7 +219,7 @@ export class TreeFilters extends React.Component {
                                     onChange={(e)=>{
                                         let shape = e.target.value;
                                         this.setState(()=>({shape}));
-                                        
+                                        this.clearTrees();
                                     }}
                                     className="filters__input"
                                 >
@@ -208,6 +230,7 @@ export class TreeFilters extends React.Component {
                                     <div className="filter"><input type="radio" name="shape" id="needle" value="needle"/><label htmlFor="needle">Needle</label></div>
                                     <div className="filter"><input type="radio" name="shape" id="elliptic" value="elliptic"/><label htmlFor="elliptic">Elliptic</label></div>
                                     <div className="filter"><input type="radio" name="shape" id="lanceolate" value="lanceolate"/><label htmlFor="lanceolate">Lanceolate</label></div>
+                                    <div className="filter"><input type="radio" name="shape" id="no" value=""/><label htmlFor="no">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">
@@ -222,13 +245,14 @@ export class TreeFilters extends React.Component {
                                     onChange={(e)=>{
                                         let lobing = e.target.value;
                                         this.setState(()=>({lobing}));
-                                        
+                                        this.clearTrees();
                                     }}
                                     className="filters__input"
                                 >
                                     <div className="filter"><input type="radio" name="lobing" id="pinnately" value="pinnately"/><label htmlFor="pinnately">Pinnately</label></div>
                                     <div className="filter"><input type="radio" name="lobing" id="palmately" value="palmately"/><label htmlFor="palmately">Palmately</label></div>
                                     <div className="filter"><input type="radio" name="lobing" id="irregularly" value="irregular"/><label htmlFor="irregularly">Irregularly</label></div>
+                                    <div className="filter"><input type="radio" name="lobing" id="ne" value=""/><label htmlFor="ne">None</label></div>
                                 </div>
                             </div>
                             <div className="filters__form">
@@ -243,13 +267,14 @@ export class TreeFilters extends React.Component {
                                         onChange={(e)=>{
                                             let texture = e.target.value;
                                             this.setState(()=>({texture}));
-                                            
+                                            this.clearTrees();
                                         }}
                                         className="filters__input"
                                     >
                                         <div className="filter"><input type="radio" name="texture" id="rough" value="rough"/><label htmlFor="rough">Rough</label></div>
                                         <div className="filter"><input type="radio" name="texture" id="smooth" value="smooth"/><label htmlFor="smooth">Smooth</label></div>
                                         <div className="filter"><input type="radio" name="texture" id="hairy" value="hairy"/><label htmlFor="hairy">Hairy</label></div>
+                                        <div className="filter"><input type="radio" name="texture" id="nne" value=""/><label htmlFor="nne">None</label></div>
                                     </div>
                             </div>
                             </div>
@@ -270,19 +295,21 @@ export class TreeFilters extends React.Component {
                                         onChange={(e)=>{
                                             let dryFruits = e.target.value;
                                             this.setState(()=>({dryFruits}));
-                                            
+                                            this.clearTrees();
                                         }}
                                         className="filters__input"
                                     >
                                         <div className="filter"><input type="radio" name="dryFruits" id="achene" value="achene"/><label htmlFor="achene">Achene</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="capsule" value="capsule"/><label htmlFor="capsule">Capsule</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="caryopse" value="caryopse"/><label htmlFor="caryopse">Caryopse</label></div>
-                                        <div className="filter"><input type="radio" name="other" id="cone" value="cone"/><label htmlFor="cone">Cone</label></div>
+                                        <div className="filter"><input type="radio" name="dryFruits" id="cone" value="cone"/><label htmlFor="cone">Cone</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="follicle" value="follicle"/><label htmlFor="follicle">Follicle</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="legume" value="legume"/><label htmlFor="legume">Legume</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="nut" value="nut"/><label htmlFor="nut">Nut</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="samara" value="samara"/><label htmlFor="samara">Samara</label></div>
                                         <div className="filter"><input type="radio" name="dryFruits" id="schizocarp" value="schizocarp"/><label htmlFor="schizocarp">Schizocarp</label></div>
+                                        <div className="filter"><input type="radio" name="dryFruits" id="nn" value=""/><label htmlFor="nn">None</label></div>
+                                        
                                     </div>
                                 </div>
 
@@ -298,7 +325,7 @@ export class TreeFilters extends React.Component {
                                         onChange={(e)=>{
                                             let fleshyFruits = e.target.value;
                                             this.setState(()=>({fleshyFruits}));
-                                            
+                                            this.clearTrees();
                                         }} 
                                         className="filters__input"                    
                                     >
@@ -306,6 +333,7 @@ export class TreeFilters extends React.Component {
                                         <div className="filter"><input type="radio" name="fleshyFruits" id="drupe" value="drupe"/><label htmlFor="drupe">Drupe</label></div>
                                         <div className="filter"><input type="radio" name="fleshyFruits" id="pepo" value="pepo"/><label htmlFor="pepo">Pepo</label></div>
                                         <div className="filter"><input type="radio" name="fleshyFruits" id="pomes" value="pomes"/><label htmlFor="pomes">Pomes</label></div>
+                                        <div className="filter"><input type="radio" name="fleshyFruits" id="e" value=""/><label htmlFor="e">None</label></div>
                                     </div>
                                 </div>
 
@@ -321,22 +349,22 @@ export class TreeFilters extends React.Component {
                                         onChange={(e)=>{
                                             let other = e.target.value;
                                             this.setState(()=>({other}));
+                                            this.clearTrees();
                                             
                                         }}
                                         className="filters__input"
                                     >
                                         <div className="filter"><input type="radio" name="other" id="aggregate" value="aggregate"/><label htmlFor="aggregate">Aggregate</label></div>
                                         <div className="filter"><input type="radio" name="other" id="multiple" value="multiple"/><label htmlFor="multiple">Multiple</label></div>
+                                        <div className="filter"><input type="radio" name="other" id="zero" value=""/><label htmlFor="zero">None</label></div>
                                     </div>
                                 </div>
                                 <button type="reset" 
-                                    className="reset__button"
-                                    onClick={()=> {
-                                        this.props.clearFilter()
-                                        this.clearRadios();
-
-                                    }
-                                }>Clear</button>
+                                className="reset__button"
+                                onClick={()=> {
+                                    this.clearRadios();
+                                }
+                            }>Clear</button>
                         </div>
                     </div>
                 </form>
@@ -358,7 +386,8 @@ const mapDispatchToProps = (dispatch) => ({
     setFleshyFilter: (fleshyFruits) => dispatch(setFleshyFilter(fleshyFruits)),
     setOtherFilter: (other) => dispatch(setOtherFilter(other)),
     setMarginsFilter: (margins) => dispatch(setMarginsFilter(margins)),
-    clearFilter: () => dispatch(clearFilter())
+    clearTrees: () => dispatch(clearTrees()),
+    startSetTreeList: () => dispatch(startSetTreeList())
 });
 
 export default connect(undefined, mapDispatchToProps)(TreeFilters);
