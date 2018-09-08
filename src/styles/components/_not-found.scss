@@ -1,0 +1,16 @@
+.not-found {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 800px;
+    padding: 10rem;
+    text-align: center;
+    width: 100%;
+}
+
+.not-found-link {
+    font-size: 2rem;
+    cursor: pointer;
+}

@@ -45,7 +45,9 @@ const AppRouter = () => (
                     path="/admin"
                     component={AdminPage}
                 />
-                
+                <Route 
+                    component={NotFoundPage}
+                />
                 
             </Switch>
         </div>     

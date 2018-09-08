@@ -46,12 +46,12 @@ export class AdminLogin extends React.Component {
     };
     render() {
         return (
-            <div className="admin__log-in">
-                <form className="admin__log-in__form" onSubmit={this.onSubmit}>
-                    <h2 className="admin__log-in__title">Admin Login</h2>
-                    <input placeholder="Email" className="admin__log-in__form-input" type="email" onChange={this.updateEmail}/>
-                    <input placeholder="Password" className="admin__log-in__form-input"type="password" onChange={this.updatePassword}/>
-                    <button className="admin__log-in__form-button">Log In</button>
+            <div className="admin__login">
+                <form className="admin__login__form" onSubmit={this.onSubmit}>
+                    <h2 className="admin__login__title">Admin Login</h2>
+                    <input placeholder="Email" className="admin__login__form-input" type="email" onChange={this.updateEmail}/>
+                    <input placeholder="Password" className="admin__login__form-input"type="password" onChange={this.updatePassword}/>
+                    <button className="admin__login__form-button">Log In</button>
                 </form>
             </div>
         )
