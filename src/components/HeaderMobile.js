@@ -11,9 +11,9 @@ export const HeaderMobile = (props) => (
         <div className={"header__leaf-container is-mobile " + (props.unlocked === true && " unlocked")}>
             <div>
             <a href="/"><FontAwesomeIcon icon={faLeaf} className={"header__leaf is-mobile " + (props.unlocked === true && " unlocked")} onClick={ 
-                    () => {
+                    (e) => {
+                        e.preventDefault();
                         props.unlockApp();
-                        document.getElementsByClassName('body')[0].classList.add('unlocked')
                     }        
                 }/></a>
                 <h2 className={"header__leaf-text is-mobile " + (props.unlocked === true && " unlocked")}>Click to start</h2>

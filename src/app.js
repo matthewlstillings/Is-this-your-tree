@@ -27,9 +27,7 @@ const findTrees = () => {
 } 
 findTrees();  
 
-setInterval(()=>{
-    console.log(store.getState());
-}, 3000);
+
 
 
 //Calls app using provider from react-store

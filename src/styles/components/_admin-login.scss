@@ -7,7 +7,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    min-height: 350px;
+    min-height: 420px;
     justify-content: space-evenly;
     margin: 10rem auto;
     max-width: 320px;
@@ -24,6 +24,18 @@
 
 .admin__login__form-button {
     @include buttons;
+    margin-top: 2rem;
     padding: 1.5rem;
     width: 100%;
+}
+
+.error {
+    color: $red;
+}
+
+.form-error {
+    -webkit-box-shadow: inset 0px -2px 0px 0px $red;
+    -moz-box-shadow: inset 0px -2px 0px 0px $red;
+    box-shadow: inset 0px -2px 0px 0px $red;
+    border-bottom: 1px solid $red;
 }

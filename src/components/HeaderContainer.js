@@ -14,6 +14,9 @@ export class Header extends React.Component {
         windowWidth: window.innerWidth,
         unlocked: false
     }
+    componentWillMount = () => {
+        setInterval(() => {console.log(this.state);},2000);
+    }
     renderHeader = () => {
         if (document.URL === 'https://is-this-your-tree.herokuapp.com/add-tree' 
         || document.URL === 'https://is-this-your-tree.herokuapp.com/admin' 
@@ -30,6 +33,7 @@ export class Header extends React.Component {
         this.setState(()=>({unlocked: true}));
         const body = document.getElementsByClassName('body')[0];
         body.classList.add('unlocked');
+        console.log('clicked');
     }
     handleWidthChange = (windowWidth, event) => {
             this.setState({windowWidth: window.innerWidth})
