@@ -1,7 +1,1 @@
-# Git commands
-
-git init - create new git repo
-git status - view changes to projects
-git add - add files to staging area
-git commit - creates a new commit with files from staging area
-git log - view recent commits
+This is a application build in React/Redux and connected to Firebase. The app uses names, latin names, and other characteristics about trees from Central Park to identify said tree should you come across one you want to know more about. 
