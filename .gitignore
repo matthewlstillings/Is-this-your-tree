@@ -1,0 +1,7 @@
+node_modules/
+public/dist/
+yarn-error.log
+src/playground/
+.env.test
+.env.development
+package-lock.json
