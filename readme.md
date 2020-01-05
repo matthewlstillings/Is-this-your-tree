@@ -13,7 +13,7 @@ I started teaching myself programming on the side and while I was chatting with 
 # Tech used
 
  Built with: 
-  - React (Create-react-app)
+  - React (v16.8.6)
   - Redux (v3.7.2)
   - Node-Sass (v4.12.0)
   - SCSS
